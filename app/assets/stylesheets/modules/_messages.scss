@@ -6,19 +6,28 @@
   color: #ffffff;
 }
 
+a {
+  text-decoration: none;
+}
+
+.side-bar a {
+  @include white();
+}
+
 .wrapper {
   display: flex;
 }
 
 .side-bar {
   @include white();
-  font-weight: bold;
   width: 300px;
   &__user-name {
+    font-weight: bold;
     background-color: #253141;
     height: 100px;
     display: flex;
     .top-item {
+      font-size: inherit;
       height: 20px;
       width: 260px;
       margin: auto 20px;
@@ -35,10 +44,6 @@
         justify-content: flex-end;
         &--edit {
           margin-right: 5px;
-          @include white();
-        }
-        &--cog{
-          @include white();
         }
       }
     }
@@ -47,13 +52,16 @@
     background-color: #2f3e51;
     height: calc(100vh - 100px);
     .group-data {
-      padding: 20px 20px 40px;
-      &__group-name {
-        font-size: 15px;
-      }
-      &__group-message {
-        font-size: 11px;
-        margin-top: 5px;
+      padding: 20px 20px 0px;
+      &__group{
+        margin-bottom: 40px;
+        &--name {
+          font-size: 15px;
+        }
+        &--message {
+          font-size: 11px;
+          margin-top: 5px;
+        }
       }
     }
   }

@@ -4,33 +4,16 @@
       .top-item__user-name
         = current_user.name
       .top-item__icon
-        = link_to '#' do
+        = link_to new_group_path do
           = icon('far', 'edit', class: 'top-item__icon--edit')
         = link_to edit_user_path(current_user) do
           = icon('fas', 'cog', class: 'top-item__icon--cog')
   .side-bar__groups-lists
     .group-data
-      .group-data__group-name
-        GROUP
-      .group-data__group-message
-        No message
-    .group-data
-      .group-data__group-name
-        GROUP
-      .group-data__group-message
-        No message
-    .group-data
-      .group-data__group-name
-        GROUP
-      .group-data__group-message
-        No message
-    .group-data
-      .group-data__group-name
-        GROUP
-      .group-data__group-message
-        No message
-    .group-data
-      .group-data__group-name
-        GROUP
-      .group-data__group-message
-        No message
+      - current_user.groups.each do |group|
+        .group-data__group
+          = link_to messages_path, method: :GET do
+            .group-data__group--name
+              = group.name
+            .group-data__group--message
+              No message

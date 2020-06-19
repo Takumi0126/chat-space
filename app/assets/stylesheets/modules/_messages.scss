@@ -148,6 +148,7 @@ a {
             }
             &__mask{
               &--image{
+                cursor: pointer;
                 font-size: 1.3rem;
                 position: absolute;
                 right: 10px;
@@ -159,6 +160,7 @@ a {
             }
           }
           &__submit{
+            cursor: pointer;
             padding: 0 30px;
             height: 50px;
             width: 100px;

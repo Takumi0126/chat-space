@@ -8,14 +8,8 @@
     = link_to edit_group_path(current_user), class: "group-edit", method: :GET do
       Edit
   .main-chat__chat-list
-    .chat-data
-      .chat-data__user-data
-        .chat-data__user-data--name
-          t.y
-        .chat-data__user-data--day
-          2020/06/08(Mon) 23:23:00
-      .caht-data__message
-        Hello
+    .messages
+      = render @messages
   .main-chat__chat-form
     .new-message
       .new-message__form

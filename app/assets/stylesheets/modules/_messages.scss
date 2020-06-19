@@ -132,31 +132,43 @@ a {
     background-color: #d2d2d2;
     height: 90px;
     padding: 20px 40px;
-    .new-message {
-      display: flex;
+    .new-message{
       &__form{
-        position: relative;
-        width: 100%;
-        &--input {
-          height: 50px;
-          padding: 10px;
+        .form{
+          display: flex;
           width: 100%;
-        }
-        &--image{
-          position: absolute;
-          right: 10px;
-          line-height: 50px;
-          .form-label{
-            display: none;
+          .form-input{
+            position: relative;
+            width: 100%;
+            &__message{
+              height: 50px;
+              padding: 10px;
+              width: 100%; 
+              border-style: none;
+            }
+            &__mask{
+              &--image{
+                cursor: pointer;
+                font-size: 1.3rem;
+                position: absolute;
+                right: 10px;
+                top: 10px;
+                .hidden{
+                display: none;
+                }
+              }
+            }
+          }
+          &__submit{
+            cursor: pointer;
+            padding: 0 30px;
+            height: 50px;
+            width: 100px;
+            margin-left: 15px;
+            background-color: #38aef0;
+            @include white();
           }
         }
-      }
-      &__btn {
-        height: 50px;
-        width: 100px;
-        margin-left: 15px;
-        background-color: #38aef0;
-        @include white();
       }
     }
   }

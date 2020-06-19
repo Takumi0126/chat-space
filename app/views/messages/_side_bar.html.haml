@@ -12,8 +12,8 @@
     .group-data
       - current_user.groups.each do |group|
         .group-data__group
-          = link_to messages_path, method: :GET do
+          = link_to group_messages_path(group), method: :GET do
             .group-data__group--name
               = group.name
             .group-data__group--message
-              No message
+              = group.show_last_message

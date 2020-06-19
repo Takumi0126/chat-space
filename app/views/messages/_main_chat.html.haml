@@ -2,9 +2,11 @@
   .main-chat__group-data
     .gruop
       .group__name
-        Group
+        = @group.name
       .group__member
-        Member：t.y
+        Member : 
+        - @group.users.each do |user|
+          = user.name
     = link_to edit_group_path(current_user), class: "group-edit", method: :GET do
       Edit
   .main-chat__chat-list

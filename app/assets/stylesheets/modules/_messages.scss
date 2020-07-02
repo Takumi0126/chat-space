@@ -49,6 +49,7 @@ a {
     }
   }
   &__groups-lists {
+    overflow: scroll;
     background-color: #2f3e51;
     height: calc(100vh - 100px);
     .group-data {
@@ -103,6 +104,7 @@ a {
     }
   }
   &__chat-list {
+    overflow: scroll;
     background-color: #fafafa;
     height: calc(100vh - 190px);
     padding: 35px 40px;

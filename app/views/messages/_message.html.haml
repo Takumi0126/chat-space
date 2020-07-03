@@ -4,8 +4,8 @@
       = message.user.name
     .chat-data__user-data--day
       = message.created_at.strftime("%Y/%m/%d(%a) %H:%M:%S")
-  .caht-data__message
+  .chat-data__message
     - if message.content.present?
-      %p.lcaht-data__message--content
+      %p.chat-data__message--content
         = message.content
-    = image_tag message.image.url, class: 'lower-message__image' if message.image.present?
+    = image_tag message.image.url, class: 'chat-data__message--image' if message.image.present?

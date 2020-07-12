@@ -1,17 +1,17 @@
 $(function(){
   function buildHTML(message){
     if (message.image) {
-      var html = `<div class="chat-data" data-message-id="${message.id}">
-                    <div class="chat-data__user-data">
-                      <div class="chat-data__user-data--name">
+      var html = `<div class="message" data-message-id="${message.id}">
+                    <div class="message__user-data">
+                      <div class="message__user-data--name">
                         ${message.user_name}
                       </div>
-                      <div class="chat-data__user-data--day">
+                      <div class="message__user-data--day">
                         ${message.created_at}
                       </div>
                     </div>
-                    <div class="chat-data__message">
-                      <p class="chat-data__message--content">
+                    <div class="message__text">
+                      <p class="message__text--content">
                         ${message.content}
                       </p>
                     </div>
@@ -19,23 +19,23 @@ $(function(){
                   </div>`
         return html;
     } else {
-      var html = `<div class="chat-data" data-message-id="${message.id}">
-                    <div class="chat-data__user-data">
-                      <div class="chat-data__user-data--name">
+      var html = `<div class="message" data-message-id="${message.id}">
+                    <div class="message__user-data">
+                      <div class="message__user-data--name">
                         ${message.user_name}
                       </div>
-                      <div class="chat-data__user-data--day">
+                      <div class="message__user-data--day">
                         ${message.created_at}
                       </div>
                     </div>
-                      <div class="chat-data__message">
-                        <p class="chat-data__message--content">
+                      <div class="message__text">
+                        <p class="message__text--content">
                           ${message.content}
                         </p>
                       </div>
                   </div>`
         return html;
-    }
+    };
   }
   $('#new_message').on('submit', function(e){
     e.preventDefault();
@@ -62,7 +62,7 @@ $(function(){
     })
   })
   var reloadMessages = function() {
-    var last_message_id = $('.messages:last').data("message-id");
+    var last_message_id = $('.message:last').data("message-id");
     $.ajax({
       url: "api/messages",
       type: 'get',

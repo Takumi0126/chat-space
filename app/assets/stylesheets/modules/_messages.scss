@@ -108,7 +108,7 @@ a {
     background-color: #fafafa;
     height: calc(100vh - 190px);
     padding: 35px 40px;
-    .chat-data {
+    .message {
       margin-bottom: 46px;
       &__user-data {
         display: flex;
@@ -124,7 +124,7 @@ a {
           margin-left: 10px;
         }
       }
-      &__message {
+      &__text {
         color: #434a54;
         font-size: 14px;
       }

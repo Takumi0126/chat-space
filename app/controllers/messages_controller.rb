@@ -7,6 +7,7 @@ class MessagesController < ApplicationController
   end
 
   def create
+    binding.prypa
     @message = @group.messages.new(message_params)
     if @message.save
       respond_to do |format|
